@@ -187,6 +187,9 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
+- [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [vim-surround](https://github.com/tpope/vim-surround)
 
 ---
 
