@@ -15,7 +15,7 @@ As I mentioned, this config is meant as a starting point for people new to Neovi
 Now this config uses `lazy.nvim` as a plugin manager, so if you are migrating from packer you should probably remove
 `$HOME/.local/share/nvim` and re-open nvim to re-install the plugins to not face any issues.
 
-## Install Neovim 0.9
+## Install Neovim 0.9+
 
 You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to a newer version.
 
@@ -31,12 +31,32 @@ make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
+Installing dependencies
+```sh
+sudo apt update
+sudo apt install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build black \
+    gettext cmake unzip curl xsel
+# Node support
+npm i -g prettier
+npm i -g neovim
+npm i -g yarn
+# Python support
+pip install pynvim flake8
+```
+Install lazygit support (optional)
+```sh
+cd $HOME
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+```
 ## Install the config
 
 Make sure to remove or backup your current `nvim` directory
 
 ```sh
-git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
+git clone https://github.com/nkone/nvim-basic-ide.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed
@@ -81,18 +101,7 @@ Next we need to install python support (node is optional)
   ```sh
   npm i -g neovim
   ```
-
-We will also need `ripgrep` for Telescope to work:
-
-- Ripgrep
-
-  ```sh
-  sudo apt install ripgrep
-  ```
-
 ---
-
-**NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
 
 ## Fonts
 
@@ -150,7 +159,7 @@ Make sure the formatter or linter is installed and add it to this setup function
 
 Heres the wiki for installing new plugins refer to this: [wiki](https://github.com/LunarVim/nvim-basic-ide/wiki/adding_new_plugins)
 
-## Plugins
+## Plugins used in this config
 
 - [lazy](https://github.com/folke/lazy.nvim)
 - [plenary](https://github.com/nvim-lua/plenary.nvim)
@@ -189,7 +198,8 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 - [vim-easymotion](https://github.com/easymotion/vim-easymotion)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
-- [vim-surround](https://github.com/tpope/vim-surround)
+- [nvim-surround](https://github.com/tkylechui/nvim-surround)
+- [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
 ---
 
