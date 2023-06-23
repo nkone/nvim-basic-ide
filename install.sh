@@ -51,6 +51,14 @@ nerdfonts() {
     echo "After installation, change terminal font to correctly display glyphs and icons"
 }
 
+lazy_git() {
+  cd $HOME
+  LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+  curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+  tar xf lazygit.tar.gz lazygit
+  sudo install lazygit /usr/local/bin
+}
+
 help() {
   echo "Usage: ./install.sh [function name]"
   echo "Available functions:"
@@ -58,6 +66,7 @@ help() {
   echo "from_app: install frm nvim appimage"
   echo "from_source: build nvim from source code"
   echo "nvim_config: remove current nvim config folder and update with remote repo"
+  echo "lazy_git: Install lazy git for doing git inside vim"
 }
 
 if [ "$#" -eq 0 ] ; then

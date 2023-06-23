@@ -1,9 +1,8 @@
 -- Shorten function name
 local keymap = vim.keymap.set
+
 -- Silent keymap option
 local opts = { noremap = true, silent = true }
--- which-key register
--- local wk = require "which-key"
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -83,4 +82,3 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-
