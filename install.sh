@@ -60,4 +60,8 @@ help() {
   echo "nvim_config: remove current nvim config folder and update with remote repo"
 }
 
+if [ "$#" -eq 0 ] ; then
+  help
+fi
+
 "$@"
