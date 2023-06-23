@@ -37,12 +37,10 @@ from_source() {
     sudo make install
 }
 
-
-# Config folder
-
+# Folder
 nvim_config() {
     rm -rf $HOME/.config/nvim
-    git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
+    git clone https://github.com/nkone/nvim-basic-ide.git ~/.config/nvim
 }
 
 nerdfonts() {
