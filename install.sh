@@ -2,12 +2,14 @@
 
 dependencies() {
     sudo apt-get update
-    sudo apt-get install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build \
+    sudo apt-get install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build black \
         gettext cmake unzip curl xsel
     # Node support
+    npm i -g prettier
     npm i -g neovim
+    npm i -g yarn
     # Python support
-    pip install pynvim
+    pip install pynvim flake8
 }
 
 # Neovim installation
