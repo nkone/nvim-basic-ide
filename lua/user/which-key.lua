@@ -14,6 +14,8 @@ function M.config()
       s = { "<C-w>s<C-w>j:terminal<CR>:set nonumber<CR><S-a>", "Split terminal below" },
       v = { "<C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>", "Split terminal to right" }
     },
+    ["<A-j>"] = {":m '>+1<CR>gv=gv", "Shift down", mode = "v", noremap = true},
+    ["<A-k>"] = {":m '<-2<CR>gv=gv", "Shift up", mode = "v", noremap = true,},
 })
 end
 
