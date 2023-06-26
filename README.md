@@ -198,8 +198,10 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 - [vim-easymotion](https://github.com/easymotion/vim-easymotion)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-lsp-notify](https://github.com/mrded/nvim-lsp-notify)
 - [nvim-surround](https://github.com/tkylechui/nvim-surround)
 - [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+- [noice.nvim](https://github.com/folke/noice.nvim)
 
 ---
 
