@@ -202,6 +202,7 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [nvim-surround](https://github.com/tkylechui/nvim-surround)
 - [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 - [noice.nvim](https://github.com/folke/noice.nvim)
+- [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 
 ---
 
