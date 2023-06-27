@@ -18,10 +18,10 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
+--[[ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-l>", "<C-w>l", opts) ]]
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -82,3 +82,10 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- tmux integration
+keymap("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>", opts)
+keymap("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>", opts)
+keymap("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>", opts)
+keymap("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>", opts)
+keymap("n", "<C-p>", ":<C-U>TmuxNavigatePrevious<cr>", opts)
