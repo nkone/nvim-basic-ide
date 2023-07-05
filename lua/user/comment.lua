@@ -35,6 +35,8 @@ function M.config()
     end
   end
   require("Comment").setup()
+  local ft = require "Comment.ft"
+  ft.set('text', '#%s')
 end
 
 return M
