@@ -7,7 +7,7 @@ local M = {
 }
 
 function M.config ()
-  require("lazy").setup{}
+  -- require("lazy").setup{}
 end
 
 return M
