@@ -5,6 +5,7 @@ dependencies() {
     sudo apt-get install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build black \
         gettext cmake unzip curl xsel
     # Node support
+    npm config set prefix '~/.local/'
     npm i -g prettier
     npm i -g neovim
     npm i -g yarn
