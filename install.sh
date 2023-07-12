@@ -3,14 +3,18 @@
 dependencies() {
     sudo apt-get update
     sudo apt-get install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build black \
-        gettext cmake unzip curl xsel
+        gettext cmake unzip curl xsel cargo
     # Node support
     npm config set prefix '~/.local/'
+    # Upgrade node to latest stable
+    export N_PREFIX=~/.local/
+    n stable
     npm i -g prettier
     npm i -g neovim
     npm i -g yarn
+    npm i -g n
     # Python support
-    pip install pynvim flake8
+    pip install pynvim flake8 pyright
 }
 
 # Neovim installation

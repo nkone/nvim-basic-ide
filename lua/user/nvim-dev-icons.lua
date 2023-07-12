@@ -14,6 +14,18 @@ function M.config()
         name = "Zsh",
       },
     },
+    override_by_extension = {
+      ["log"] = {
+        icon = "",
+        color = "#919c9c",
+        name = "Log"
+      },
+      ["txt"] = {
+        icon = "",
+        color = "#ffffff",
+        name = "Text"
+      }
+    };
     color_icons = true,
     default = true,
   }
