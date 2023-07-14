@@ -11,12 +11,12 @@ local M = {
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
-  }
+  },
 }
 
 function M.config()
   local noice = require "noice"
-  noice.setup({
+  noice.setup {
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
       override = {
@@ -24,12 +24,12 @@ function M.config()
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
-      signature = {
-        enabled = false,
-      },
-      hover = {
-        enabled = false,
-      },
+      -- signature = {
+      --   enabled = false,
+      -- },
+      -- hover = {
+      --   enabled = false,
+      -- },
     },
     presets = {
       bottom_search = false, -- use a classic bottom cmdline for search
@@ -40,10 +40,10 @@ function M.config()
     },
     cmdline = {
       format = {
-        cmdline = { pattern = "^:", icon = "", lang = "vim", title = "CMD"},
+        cmdline = { pattern = "^:", icon = "", lang = "vim", title = "CMD" },
         search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex", view = "cmdline_popup" },
         search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex", view = "cmdline_popup" },
-      }
+      },
     },
     views = {
       cmdline_popup = {
@@ -78,10 +78,10 @@ function M.config()
     routes = {
       {
         view = "notify",
-        filter = { event =  "msg_showmode"},
+        filter = { event = "msg_showmode" },
       },
     },
-  })
+  }
 end
 
 return M
