@@ -29,22 +29,24 @@ function M.config()
       },
       formatting.black.with { extra_args = { "--fast" } },
       formatting.stylua,
-      formatting.google_java_format,
+      -- formatting.google_java_format,
+      formatting.shellharden,
       diagnostics.flake8,
-      diagnostics.pylint.with({
+      diagnostics.pylint.with {
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-      })
+      },
+      diagnostics.shellcheck,
     },
     on_attach = function(client, bufnr)
-      if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      if client.supports_method "textDocument/formatting" then
+        vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
         vim.api.nvim_create_autocmd("BufWritePre", {
           group = augroup,
           buffer = bufnr,
           callback = function()
             -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
             -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
-            vim.lsp.buf.format({ async = false })
+            vim.lsp.buf.format { async = false }
           end,
         })
       end
