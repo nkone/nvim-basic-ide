@@ -31,7 +31,9 @@ function M.config()
       formatting.stylua,
       -- formatting.google_java_format,
       formatting.shellharden,
-      diagnostics.flake8,
+      diagnostics.flake8.with {
+        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+      },
       diagnostics.pylint.with {
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
       },
