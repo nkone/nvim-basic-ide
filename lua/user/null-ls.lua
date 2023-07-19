@@ -37,7 +37,7 @@ function M.config()
       diagnostics.pylint.with {
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
       },
-      diagnostics.shellcheck,
+      -- diagnostics.shellcheck,
     },
     on_attach = function(client, bufnr)
       if client.supports_method "textDocument/formatting" then

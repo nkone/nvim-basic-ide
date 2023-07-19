@@ -1,13 +1,14 @@
+#!/bin/bash
 # Install dependencies
 
 dependencies() {
     sudo apt-get update
     sudo apt-get install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build black \
-        gettext cmake unzip curl xsel cargo
+        gettext cmake unzip curl xsel cargo shellcheck
     # Node support
-    npm config set prefix '~/.local/'
+    npm config set prefix "$HOME"/.local/
     # Upgrade node to latest stable
-    export N_PREFIX=~/.local/
+    export N_PREFIX=$HOME/.local/
     n stable
     npm i -g prettier
     npm i -g neovim
@@ -36,9 +37,9 @@ from_app() {
 from_source() {
     echo "Installing neovim from source"
     sudo apt remove neovim -y
-    cd $HOME
+    cd "$HOME" || return
     git clone https://github.com/neovim/neovim.git
-    cd neovim
+    cd neovim || return
     git checkout release-0.9
     make CMAKE_BUILD_TYPE=Release
     sudo make install
@@ -46,12 +47,12 @@ from_source() {
 
 # Folder
 nvim_config() {
-    rm -rf $HOME/.config/nvim
+    rm -rf "$HOME"/.config/nvim
     git clone https://github.com/nkone/nvim-basic-ide.git ~/.config/nvim
 }
 
 nerdfonts() {
-    cd $HOME
+    cd "$HOME" || return
     git clone https://github.com/ronniedroid/getnf.git
     (cd getnf && ./install.sh)
     echo "Use getnf and install fonts for terminals."
@@ -59,7 +60,7 @@ nerdfonts() {
 }
 
 lazy_git() {
-  cd $HOME
+  cd "$HOME" || return
   LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
   curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
   tar xf lazygit.tar.gz lazygit
