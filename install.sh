@@ -15,7 +15,7 @@ dependencies() {
     npm i -g n
     n stable
     # Python support
-    pip install pynvim flake8 pyright
+    pip install pynvim flake8 pylint
 }
 
 # Neovim installation
