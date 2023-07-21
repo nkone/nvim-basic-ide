@@ -9,11 +9,11 @@ dependencies() {
     npm config set prefix "$HOME"/.local/
     # Upgrade node to latest stable
     export N_PREFIX=$HOME/.local/
-    n stable
     npm i -g prettier
     npm i -g neovim
     npm i -g yarn
     npm i -g n
+    n stable
     # Python support
     pip install pynvim flake8 pyright
 }
