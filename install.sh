@@ -4,7 +4,7 @@
 dependencies() {
     sudo apt-get update
     sudo apt-get install -y npm nodejs fd-find python3-venv ripgrep zsh ninja-build black \
-        gettext cmake unzip curl xsel cargo shellcheck
+        gettext cmake unzip curl xsel cargo shellcheck fortune
     # Node support
     npm config set prefix "$HOME"/.local/
     # Upgrade node to latest stable
