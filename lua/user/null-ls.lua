@@ -34,9 +34,9 @@ function M.config()
       diagnostics.flake8.with {
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
       },
-      diagnostics.pylint.with {
-        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-      },
+      -- diagnostics.pylint.with {
+      --   method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+      -- },
       -- diagnostics.shellcheck,
     },
     on_attach = function(client, bufnr)
