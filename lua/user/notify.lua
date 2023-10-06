@@ -1,5 +1,6 @@
 local M = {
   "rcarriga/nvim-notify",
+  commit = "159c6cf1be25a933f35e97499314c9faab55c98f",
   lazy = false,
 }
 

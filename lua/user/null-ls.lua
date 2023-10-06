@@ -26,6 +26,7 @@ function M.config()
       formatting.prettier.with {
         extra_filetypes = { "toml" },
         extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+        timeout_ms = 3000,
       },
       formatting.black.with { extra_args = { "--fast" } },
       formatting.stylua,
