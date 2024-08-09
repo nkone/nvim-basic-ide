@@ -1,7 +1,7 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   event = "BufReadPre",
-  commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7",
+  -- commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7",
   dependencies = {
     {
       "nvim-lua/plenary.nvim",
@@ -28,16 +28,19 @@ function M.config()
         extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
         timeout_ms = 3000,
       },
-      formatting.black.with { extra_args = { "--fast" } },
+      formatting.black.with {
+        extra_args = { "--fast" },
+        timeout_ms = 3000,
+      },
       formatting.stylua,
       -- formatting.google_java_format,
       formatting.shellharden,
       diagnostics.flake8.with {
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
       },
-      -- diagnostics.pylint.with {
-      --   method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-      -- },
+      diagnostics.pylint.with {
+        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+      },
       -- diagnostics.shellcheck,
     },
     on_attach = function(client, bufnr)
